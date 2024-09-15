@@ -1,0 +1,36 @@
+.table-principal{
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center;     
+  }
+
+.filter-principal{
+    align-items: end;
+    text-align: end;
+    margin: 5px !important;
+}
+
+.scroll-v{
+    height: 100%;
+    overflow-y: auto;  
+    overflow-x: auto; 
+    min-width: 90%;    
+}
+
+.header-table{
+    display: flex;
+    justify-content: space-between;
+}
+
+mat-toolbar {
+    background-color: #000; 
+    color: #fff;
+}
+
+.btn-newOrder{
+    color: #A5DD9B !important;
+}
+
+.btn-viewOrders{
+    color: #C96868 !important;
+}

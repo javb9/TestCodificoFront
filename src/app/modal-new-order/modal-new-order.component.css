@@ -1,0 +1,28 @@
+mat-toolbar{
+    background-color: #87C19B;
+    color: #fff;
+}
+
+mat-prefix {
+    margin-right: 5px !important; /* Espaciado entre el prefijo y el campo de entrada */
+  }
+
+h3{
+    margin-top: 5px !important;
+    margin-bottom: 15px !important;
+}
+mat-form-field{
+    margin-top: 3px;
+    margin-right: 5px !important;
+    min-width: 100% !important;
+}
+
+.btns-newOrder{
+    justify-content: end;
+    margin: 5px !important;
+    display: flex !important;
+}
+
+.btn-close-save{
+    color: #87C19B;
+}

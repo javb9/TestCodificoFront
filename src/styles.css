@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.custom-dialog-container {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; 
+    height: 90% !important;
+    padding: 10px;
+    min-width: 90% !important;    
+}
+
+.mat-mdc-dialog-surface {
+    padding: 15px;
+    scrollbar-width: none !important;
+}
+

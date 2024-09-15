@@ -1,0 +1,24 @@
+.table-orders{
+    margin: 5px;
+}
+
+.filter-principal{
+    align-items: end;
+    text-align: end;
+    margin: 5px !important;
+}
+
+mat-toolbar{
+    background-color: #BB6464;
+    color: #fff;
+}
+
+.div-btn-close-orders{
+    text-align: end !important;
+    margin: 5px !important;
+}
+
+.btn-close-orders{
+    color: #BB6464 !important;
+}
+

@@ -1,0 +1,9 @@
+.div-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Permite que el contenido crezca más allá de los límites del contenedor */
+}
+
+.btn-close{
+    color: #87C19B;
+}

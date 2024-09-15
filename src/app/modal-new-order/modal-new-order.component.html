@@ -1,0 +1,167 @@
+<div>
+    <mat-toolbar color="primary">
+        <span>Customer AHPOP - New Order</span>
+    </mat-toolbar>
+    <h3>Order</h3>
+    <div>
+        <form [formGroup]="form">
+            <mat-grid-list cols="2" rowHeight="80px">
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Employee</mat-label>
+                        <mat-select formControlName="Employee">
+                            <mat-option *ngFor="let element of employees " value={{element.empId}}>{{element.fullName}}</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="form.get('Employee')?.hasError('required') && form.get('Employee')?.touched">
+                            This field is required
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Shipper</mat-label>
+                        <mat-select formControlName="Shipper">
+                            <mat-option *ngFor="let element of shippers " value={{element.shipperId}}>{{element.companyName}}</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="form.get('Shipper')?.hasError('required') && form.get('Shipper')?.touched">
+                            This field is required
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+
+            <mat-form-field>
+                <mat-label>Ship Name</mat-label>
+                <input formControlName="shipName" matInput>
+                <mat-error *ngIf="form.get('shipName')?.hasError('required') && form.get('shipName')?.touched">
+                    This field is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-grid-list cols="3" rowHeight="80px">
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Ship Address</mat-label>
+                        <input formControlName="shipAddress" matInput>
+                        <mat-error
+                            *ngIf="form.get('shipAddress')?.hasError('required') && form.get('shipAddress')?.touched">
+                            This field is required
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Ship City</mat-label>
+                        <input formControlName="shipCity" matInput>
+                        <mat-error *ngIf="form.get('shipCity')?.hasError('required') && form.get('shipCity')?.touched">
+                            This field is required
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Ship Country</mat-label>
+                        <input formControlName="shipCountry" matInput>
+                        <mat-error
+                            *ngIf="form.get('shipCountry')?.hasError('required') && form.get('shipCountry')?.touched">
+                            This field is required
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Order Date</mat-label>
+                        <input matInput [matDatepicker]="orderDatepicker" formControlName="orderDate">
+                        <mat-datepicker-toggle matSuffix [for]="orderDatepicker"></mat-datepicker-toggle>
+                        <mat-datepicker #orderDatepicker></mat-datepicker>
+                        <mat-error *ngIf="form.get('orderDate')?.hasError('required')">This field is
+                            required</mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Required Date</mat-label>
+                        <input matInput [matDatepicker]="requiredDatepicker" formControlName="requiredDate">
+                        <mat-datepicker-toggle matSuffix [for]="requiredDatepicker"></mat-datepicker-toggle>
+                        <mat-datepicker #requiredDatepicker></mat-datepicker>
+                        <mat-error *ngIf="form.get('requiredDate')?.hasError('required')">This field is
+                            required</mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Shipped Date</mat-label>
+                        <input matInput [matDatepicker]="shippedDatepicker" formControlName="shippedDate">
+                        <mat-datepicker-toggle matSuffix [for]="shippedDatepicker"></mat-datepicker-toggle>
+                        <mat-datepicker #shippedDatepicker></mat-datepicker>
+                        <mat-error *ngIf="form.get('shippedDate')?.hasError('required')">This field is
+                            required</mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+            </mat-grid-list>
+
+            <mat-form-field>
+                <mat-label><mat-prefix>$</mat-prefix> Freight</mat-label>
+                <input formControlName="freight" matInput type="number">
+                <mat-error *ngIf="form.get('freight')?.hasError('required') && form.get('freight')?.touched">
+                    This field is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-divider></mat-divider>
+
+            <h3>Order Details</h3>
+
+            <mat-form-field>
+                <mat-label>Product</mat-label>
+                <mat-select formControlName="Product">
+                    <mat-option *ngFor="let element of products " value={{element.productId}}>{{element.productName}}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="form.get('Product')?.hasError('required') && form.get('Product')?.touched">
+                    This field is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-grid-list cols="3" rowHeight="80px">
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label><mat-prefix>$</mat-prefix> Unit Price</mat-label>
+                        <input formControlName="unitPrice" matInput type="number">
+                        <mat-error
+                            *ngIf="form.get('unitPrice')?.hasError('required') && form.get('unitPrice')?.touched">
+                            This field is required
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Quantity</mat-label>
+                        <input formControlName="Quantity" matInput type="number">
+                        <mat-error
+                            *ngIf="form.get('Quantity')?.hasError('required') && form.get('Quantity')?.touched">
+                            This field is required
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <mat-form-field>
+                        <mat-label>Discount</mat-label>
+                        <input formControlName="Discount" matInput type="number">
+                        <mat-error
+                            *ngIf="form.get('Discount')?.hasError('required') && form.get('Discount')?.touched">
+                            This field is required
+                        </mat-error>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+            </mat-grid-list>
+
+        </form>
+        <div class="btns-newOrder">
+            <button class="btn-close-save" mat-button (click)="onClose()">CLOSE</button>
+            <button class="btn-close-save" mat-button (click)="onSubmit()">SAVE</button>
+        </div>
+    </div>
+</div>
